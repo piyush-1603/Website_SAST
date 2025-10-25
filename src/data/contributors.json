@@ -392,6 +392,21 @@
     "repos": ["Website"]
   },
   {
+    "slug": "Adarsh-Chauhan",
+    "name": "Adarsh Chauhan",
+    "role": "Contributor",
+    "location": "Delhi, India",
+    "bio": "Frontend Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/96951435?v=4",
+    "links": {
+      "github": "https://github.com/MR1ARC",
+      "x":"https://x.com/Yug980?t=beL8r16zr_qSGTqac9lEgA&s=09",
+      "linkedin": "https://www.linkedin.com/in/adarsh-chauhan-yug/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+    {
     "slug": "aditya-gupta",
     "name": "Aditya Gupta",
     "role": "Contributor",
