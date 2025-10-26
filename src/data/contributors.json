@@ -406,7 +406,7 @@
     },
     "repos": ["Website"]
   },
-    {
+  {
     "slug": "aditya-gupta",
     "name": "Aditya Gupta",
     "role": "Contributor",
@@ -432,6 +432,20 @@
       "github": "https://github.com/AKRITI-ENG?tab=stars",
       "x": null,
       "linkedin": null,
+    },
+      "repos": ["Website"]
+   },   
+  {
+    "slug": "rishi-raj",
+    "name": "Rishi Raj",
+    "role": "Contributor",
+    "location": "Delhi, India",
+    "bio": "Full Stack Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/180109771?v=4",
+    "links": {
+      "github": "https://github.com/rishiraj38",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/rishi-raj-3488432ab/",
       "community": null
     },
     "repos": ["Website"]
