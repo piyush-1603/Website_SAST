@@ -165,7 +165,7 @@ const Events = () => {
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 text-sm text-white/90 backdrop-blur hover:bg-white/10 transition-colors duration-200"
                 style={{ padding: "0.5rem 1rem" }}
               >
-                <span>📅 Calendar</span>
+                <span>Calendar</span>
               </Link>
             </div>
 
@@ -197,17 +197,17 @@ const Events = () => {
                     filterType === "all"
                       ? "5%"
                       : filterType === "past"
-                      ? "30%"
+                      ? "25%"
                       : filterType === "ongoing"
-                      ? "58%"
-                      : "80%",
+                      ? "48%"
+                      : "77%",
                   width:
                     filterType === "all"
                       ? "80px"
                       : filterType === "past"
-                      ? "95px"
+                      ? "98px"
                       : filterType === "ongoing"
-                      ? "120px"
+                      ? "130px"
                       : "110px",
                 }}
                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
