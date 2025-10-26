@@ -138,16 +138,165 @@ const Events = () => {
     },
   ];
 
-  const timelineData = [...events]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .map(({ date, title, description }) => ({
-      date: date.slice(0, 7),
+  const calendarEventsData = 
+  {
+    "events": [
+      {
+        "id": 1,
+        "title": "Water Rocket Launch",
+        "startDate": "2025-02-16",
+        "endDate": "2025-02-16",
+        "time": "10:00 AM - 4:00 PM",
+        "location": "University Campus Ground",
+        "category": "Competition",
+        "description": "A thrilling competition where teams designed, built, and launched water-powered rockets. Test your engineering skills and compete for glory!",
+        "image": "/src/Landing_media/waterrocket.png",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Competition", "Hands-on", "Team Event"]
+      },
+      {
+        "id": 2,
+        "title": "Cubesat Showcase",
+        "startDate": "2024-12-12",
+        "endDate": "2024-12-12",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Tech Exhibition Hall",
+        "category": "Exhibition",
+        "description": "Experience our latest CubeSat technology demonstration and learn about satellite systems and space exploration.",
+        "image": "/src/Landing_media/bharatmp.jpeg",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Exhibition", "Technology", "Space"]
+      },
+      {
+        "id": 3,
+        "title": "SAST Damru Exhibit",
+        "startDate": "2024-01-05",
+        "endDate": "2024-01-05",
+        "time": "11:00 AM - 3:00 PM",
+        "location": "Science Museum",
+        "category": "Exhibition",
+        "description": "A unique exhibit showcasing scientific wonders and innovative projects from SAST members.",
+        "image": "/src/Landing_media/DamruExhibit.jpeg",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Exhibition", "Innovation", "Science"]
+      },
+      {
+        "id": 4,
+        "title": "Club Onboarding 2025",
+        "startDate": "2025-08-15",
+        "endDate": "2025-08-15",
+        "time": "5:00 PM - 7:00 PM",
+        "location": "Main Auditorium",
+        "category": "Recruitment",
+        "description": "Welcoming space enthusiasts to SAST Club. Join us to explore opportunities in space technology and astronomy!",
+        "image": "/src/Landing_media/Onboarding_1.jpeg",
+        "status": "upcoming",
+        "registrationLink": "https://forms.example.com/sast-onboarding",
+        "tags": ["Recruitment", "Orientation", "Networking"]
+      },
+      {
+        "id": 5,
+        "title": "Guest Lecture - Dr. Rajkumar Vedam",
+        "startDate": "2025-02-13",
+        "endDate": "2025-02-13",
+        "time": "4:00 PM - 6:00 PM",
+        "location": "Conference Hall",
+        "category": "Workshop",
+        "description": "Insights from Dr. Vedam on future space advancements, satellite technology, and career opportunities in aerospace.",
+        "image": "/src/Landing_media/rajkumarv.jpeg",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Workshop", "Guest Lecture", "Career"]
+      },
+      {
+        "id": 6,
+        "title": "Tsuchinshan Comet Spotting",
+        "startDate": "2024-10-20",
+        "endDate": "2024-10-20",
+        "time": "8:00 PM - 11:00 PM",
+        "location": "Observatory Deck",
+        "category": "Observation",
+        "description": "Observe celestial phenomena in real-time. Join us for an unforgettable night of comet watching and stargazing.",
+        "image": "/src/Landing_media/Tsuchinshan.jpeg",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Observation", "Astronomy", "Night Event"]
+      },
+      {
+        "id": 7,
+        "title": "SAST Official Launch",
+        "startDate": "2024-01-05",
+        "endDate": "2024-01-05",
+        "time": "10:00 AM - 1:00 PM",
+        "location": "University Grounds",
+        "category": "Ceremony",
+        "description": "Inaugurating SAST's journey and vision. A historic moment marking the beginning of our space exploration endeavors.",
+        "image": "/src/Landing_media/offlaunch.jpeg",
+        "status": "completed",
+        "registrationLink": "",
+        "tags": ["Ceremony", "Launch", "Historic"]
+      },
+      {
+        "id": 8,
+        "title": "Annual Astronomy Quiz 2025",
+        "startDate": "2025-11-10",
+        "endDate": "2025-11-10",
+        "time": "3:00 PM - 6:00 PM",
+        "location": "Main Auditorium",
+        "category": "Competition",
+        "description": "Test your knowledge of astronomy, space science, and astrophysics in this exciting quiz competition with amazing prizes!",
+        "image": "",
+        "status": "upcoming",
+        "registrationLink": "https://forms.example.com/astro-quiz",
+        "tags": ["Competition", "Quiz", "Prizes"]
+      },
+      {
+        "id": 9,
+        "title": "Rocket Propulsion Workshop",
+        "startDate": "2025-09-20",
+        "endDate": "2025-09-22",
+        "time": "9:00 AM - 5:00 PM",
+        "location": "Engineering Lab",
+        "category": "Workshop",
+        "description": "A comprehensive 3-day workshop on rocket propulsion systems, engine design, and practical applications in space technology.",
+        "image": "",
+        "status": "upcoming",
+        "registrationLink": "https://forms.example.com/rocket-workshop",
+        "tags": ["Workshop", "Engineering", "Multi-day"]
+      },
+      {
+        "id": 10,
+        "title": "Satellite Hackathon 2025",
+        "startDate": "2025-10-15",
+        "endDate": "2025-10-17",
+        "time": "24 Hours",
+        "location": "Innovation Center",
+        "category": "Competition",
+        "description": "48-hour hackathon focused on satellite communication, data analysis, and space technology innovations. Form teams and compete!",
+        "image": "",
+        "status": "upcoming",
+        "registrationLink": "https://forms.example.com/sat-hackathon",
+        "tags": ["Competition", "Hackathon", "Team Event"]
+      }
+    ]
+  }
+
+
+  const timelineData = calendarEventsData.events
+    .sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
+    .map(({ startDate, title, description, category, status }) => ({
+      date: new Date(startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
       title,
       description,
+      category,
+      status,
     }));
 
   return (
-    <div className="pt-44 md:pt-56 px-0">
+        <div className="pt-44 md:pt-56 px-0">
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source src={videoe1} type="video/mp4" />
@@ -205,9 +354,9 @@ const Events = () => {
                     filterType === "all"
                       ? "80px"
                       : filterType === "past"
-                      ? "98px"
+                      ? "95px"
                       : filterType === "ongoing"
-                      ? "130px"
+                      ? "120px"
                       : "110px",
                 }}
                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
@@ -250,14 +399,181 @@ const Events = () => {
 
       {/* Timeline Section */}
       <section className="timeline_sast">
-        <div className="w-full max-w-5xl mb-40">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-20 text-gradient-to-r from-blue-400 to-sky-500">
+        <div className="timeline-container">
+          <h2 className="timeline-title">
             SAST Events Timeline
           </h2>
-          {/* Timeline code remains same */}
+          
+          <div className="timeline-wrapper">
+            {/* Timeline line */}
+            <div className="timeline-line-desktop"></div>
+            
+            {/* Mobile timeline line */}
+            <div className="timeline-line-mobile"></div>
+
+            {timelineData.map((event, index) => (
+              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}>
+                {/* Timeline dot */}
+                <div className={`timeline-dot ${event.status === 'upcoming' ? 'pulse' : ''}`}></div>
+
+                {/* Content card */}
+                <div className={`timeline-content ${index % 2 === 0 ? 'reverse' : 'normal'}`}>
+                  <div className="timeline-card">
+                    <div className={`timeline-card-inner ${index % 2 === 0 ? 'reverse' : ''}`}>
+                      <span className={`timeline-badge ${event.status === 'completed' ? 'completed' : 'upcoming'}`}>
+                        {event.category} • {event.status === 'completed' ? 'Completed' : 'Upcoming'}
+                      </span>
+                      <h3 className="timeline-event-title">{event.title}</h3>
+                      <p className="timeline-event-date">{event.date}</p>
+                      <p className="timeline-event-description">{event.description}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Spacer for desktop */}
+                <div className="timeline-spacer"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
+    // <div className="events-page-container">
+    //   <div className="events-video-background">
+    //     <video autoPlay loop muted playsInline>
+    //       <source src={videoe1} type="video/mp4" />
+    //     </video>
+    //   </div>
+
+    //   <div className="events-content-wrapper">
+    //     <section className="eventssec events-section-wrapper">
+
+    //       {/* 🌌 Filter Navbar */}
+    //       <div className="events-filter-container">
+    //         {/* Calendar Link - Mobile: Above, Desktop: Left */}
+    //         <div className="events-calendar-link-wrapper">
+    //           <Link to="/calendar" className="events-calendar-link">
+    //             <span>Calendar</span>
+    //           </Link>
+    //         </div>
+
+    //         {/* Filter Buttons */}
+    //         <div className="events-filter-buttons">
+    //           <div className="events-filter-buttons-inner">
+    //             {filterTypes.map((type) => (
+    //               <button
+    //                 key={type}
+    //                 onClick={() => filterEvents(type)}
+    //                 className={`events-filter-btn ${filterType === type ? 'active' : ''}`}
+    //               >
+    //                 {type === "all" && "All"}
+    //                 {type === "past" && "Past"}
+    //                 {type === "ongoing" && "Ongoing"}
+    //                 {type === "future" && "Future"}
+    //               </button>
+    //             ))}
+    //           </div>
+
+    //           {/* Animated underline */}
+    //           <motion.div
+    //             className="events-filter-underline"
+    //             layoutId="underline"
+    //             initial={false}
+    //             animate={{
+    //               left:
+    //                 filterType === "all"
+    //                   ? "8%"
+    //                   : filterType === "past"
+    //                   ? "30%"
+    //                   : filterType === "ongoing"
+    //                   ? "52%"
+    //                   : "75%",
+    //               width:
+    //                 filterType === "all"
+    //                   ? "50px"
+    //                   : filterType === "past"
+    //                   ? "50px"
+    //                   : filterType === "ongoing"
+    //                   ? "75px"
+    //                   : "65px",
+    //             }}
+    //             transition={{ type: "spring", stiffness: 350, damping: 25 }}
+    //           />
+    //         </div>
+    //       </div>
+
+    //       {/* Events Grid */}
+    //       <div className="events-grid">
+    //         {getFilteredEvents().map((event) => (
+    //           <div key={event.id} className="card event-card">
+    //             <div className="event-card-inner">
+    //               <img
+    //                 src={event.imgSrc}
+    //                 alt={event.title}
+    //                 className="event-card-image"
+    //               />
+    //               <video 
+    //                 className="event-card-video"
+    //                 loop 
+    //                 muted 
+    //                 playsInline
+    //               >
+    //                 <source src={event.videoSrc} type="video/mp4" />
+    //               </video>
+    //               <div className="event-card-info">
+    //                 <h2 className="event-card-title">{event.title}</h2>
+    //                 <p className="event-card-description">
+    //                   {event.description}
+    //                 </p>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </section>
+    //   </div>
+
+    //   {/* Timeline Section */}
+    //   <section className="timeline_sast">
+    //     <div className="timeline-container">
+    //       <h2 className="timeline-title">
+    //         SAST Events Timeline
+    //       </h2>
+          
+    //       <div className="timeline-wrapper">
+    //         {/* Timeline line */}
+    //         <div className="timeline-line-desktop"></div>
+            
+    //         {/* Mobile timeline line */}
+    //         <div className="timeline-line-mobile"></div>
+
+    //         {timelineData.map((event, index) => (
+    //           <div key={index} className={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}>
+    //             {/* Timeline dot */}
+    //             <div className={`timeline-dot ${event.status === 'upcoming' ? 'pulse' : ''}`}></div>
+
+    //             {/* Content card */}
+    //             <div className={`timeline-content ${index % 2 === 0 ? 'reverse' : 'normal'}`}>
+    //               <div className="timeline-card">
+    //                 <div className={`timeline-card-inner ${index % 2 === 0 ? 'reverse' : ''}`}>
+    //                   <span className={`timeline-badge ${event.status === 'completed' ? 'completed' : 'upcoming'}`}>
+    //                     {event.category} • {event.status === 'completed' ? 'Completed' : 'Upcoming'}
+    //                   </span>
+    //                   <h3 className="timeline-event-title">{event.title}</h3>
+    //                   <p className="timeline-event-date">{event.date}</p>
+    //                   <p className="timeline-event-description">{event.description}</p>
+    //                 </div>
+    //               </div>
+    //             </div>
+
+    //             {/* Spacer for desktop */}
+    //             <div className="timeline-spacer"></div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </section>
+    // </div>
   );
 };
 
