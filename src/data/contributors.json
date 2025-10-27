@@ -392,6 +392,21 @@
     "repos": ["Website"]
   },
   {
+    "slug": "Adarsh-Chauhan",
+    "name": "Adarsh Chauhan",
+    "role": "Contributor",
+    "location": "Delhi, India",
+    "bio": "Frontend Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/96951435?v=4",
+    "links": {
+      "github": "https://github.com/MR1ARC",
+      "x":"https://x.com/Yug980?t=beL8r16zr_qSGTqac9lEgA&s=09",
+      "linkedin": "https://www.linkedin.com/in/adarsh-chauhan-yug/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+  {
     "slug": "aditya-gupta",
     "name": "Aditya Gupta",
     "role": "Contributor",
@@ -402,6 +417,35 @@
       "github": "https://github.com/AdityaGupta-2006",
       "x": null,
       "linkedin": "https://www.linkedin.com/in/adityakgupta2006/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+    {
+    "slug": "AKRITI",
+    "name": "AKRITI",
+    "role": "Contributor",
+    "location":"India",
+    "bio": "Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/228021654?v=4",
+    "links": {
+      "github": "https://github.com/AKRITI-ENG?tab=stars",
+      "x": null,
+      "linkedin": null,
+    },
+      "repos": ["Website"]
+   },   
+  {
+    "slug": "rishi-raj",
+    "name": "Rishi Raj",
+    "role": "Contributor",
+    "location": "Delhi, India",
+    "bio": "Full Stack Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/180109771?v=4",
+    "links": {
+      "github": "https://github.com/rishiraj38",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/rishi-raj-3488432ab/",
       "community": null
     },
     "repos": ["Website"]

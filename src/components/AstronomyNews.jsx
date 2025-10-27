@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useMemo, useState } from "react";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import "../index.css";
 import { fetchAstronomyNews } from "../utils/astronomy-news";
 
@@ -10,6 +10,8 @@ const PAGE_SIZE = 9;
 export default function AstronomyNews() {
   const seenIds = useRef(new Set());
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const queryClient = useQueryClient();
 
   // Helper to fetch a page by pageParam (offset)
   const fetchPage = async ({ pageParam = 0 }) => {
@@ -83,7 +85,13 @@ export default function AstronomyNews() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
-  const handleRefresh = () => refetch();
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    seenIds.current.clear();
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    await queryClient.invalidateQueries({ queryKey: ["astronomyNews"] });
+    setIsRefreshing(false);
+  };
 
   const scrollToTop = () => {
     if (window.lenis) {
@@ -99,15 +107,15 @@ export default function AstronomyNews() {
         <header className="astronomy-header">
           <h1 className="astronomy-title">Astronomy News</h1>
           <button
-            className={`refresh-button ${isFetching ? "loading" : ""}`}
+            className={`refresh-button ${isRefreshing || isFetching ? "loading" : ""}`}
             onClick={handleRefresh}
-            disabled={isFetching}
+            disabled={isRefreshing || isFetching}
           >
-            {isFetching ? "Loading..." : "Refresh"}
+            {isRefreshing || isFetching ? "Loading..." : "Refresh"}
           </button>
         </header>
 
-        {isFetching && flattened.length === 0 && (
+        {(isFetching || isRefreshing) && flattened.length === 0 && (
           <div className="loading-container">
             <div className="spinner"></div>
           </div>
@@ -122,6 +130,13 @@ export default function AstronomyNews() {
         {!isFetching && !error && flattened.length === 0 && (
           <div className="empty-state">
             <p>No news articles found.</p>
+          </div>
+        )}
+
+        {/* Show loading overlay when refreshing with existing content */}
+        {isRefreshing && flattened.length > 0 && (
+          <div className="loading-container">
+            <div className="spinner"></div>
           </div>
         )}
 
