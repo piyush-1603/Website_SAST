@@ -421,6 +421,20 @@
     },
     "repos": ["Website"]
   },
+    {
+    "slug": "AKRITI",
+    "name": "AKRITI",
+    "role": "Contributor",
+    "location":"India",
+    "bio": "Developer",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/228021654?v=4",
+    "links": {
+      "github": "https://github.com/AKRITI-ENG?tab=stars",
+      "x": null,
+      "linkedin": null,
+    },
+      "repos": ["Website"]
+   },   
   {
     "slug": "rishi-raj",
     "name": "Rishi Raj",
