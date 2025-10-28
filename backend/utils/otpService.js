@@ -84,8 +84,35 @@ Exploring beyond limits, securing every step.`,
     }
 };
 
-// Send OTP via phone (stub)
+// Initialize Twilio client
+const twilio = require('twilio');
+const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
+// Validate phone number format
+const isValidPhoneNumber = (phone) => {
+    const phoneRegex = /^\+[1-9]\d{1,14}$/;
+    return phoneRegex.test(phone);
+};
+
+// Send OTP via phone using Twilio
 exports.sendOtpPhone = async (phone, otp) => {
-    console.log(`Sending OTP ${otp} to phone ${phone}`);
-    // integrate actual SMS service here
+    try {
+        // Validate phone number format
+        if (!isValidPhoneNumber(phone)) {
+            throw new Error('Invalid phone number format. Must be in E.164 format (e.g., +1234567890)');
+        }
+
+        // Send SMS using Twilio
+        const message = await client.messages.create({
+            body: `Your SAST secure access code is: ${otp}. Valid for 5 minutes. If you did not request this code, please ignore.`,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phone
+        });
+
+        console.log(`OTP ${otp} sent to phone ${phone}. Message SID: ${message.sid}`);
+        return true;
+    } catch (error) {
+        console.error('Failed to send OTP SMS:', error);
+        throw new Error(error.message || 'OTP SMS sending failed');
+    }
 };
