@@ -190,7 +190,7 @@ export default function AstronomyNews() {
 
       {/* Scroll to Top Button */}
       <button
-        className={`fixed bottom-8 right-25 w-14 h-14 md:w-12 md:h-12 bg-white/10 border border-white/20 rounded-full text-white cursor-pointer flex items-center justify-center z-[1000] backdrop-blur-md shadow-lg transition-all duration-300 ease-out ${
+        className={`fixed bottom-30 right-10 w-14 h-14 md:w-12 md:h-12 bg-white/10 border border-white/20 rounded-full text-white cursor-pointer flex items-center justify-center z-[1000] backdrop-blur-md shadow-lg transition-all duration-300 ease-out ${
           showScrollToTop
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible translate-y-5"
