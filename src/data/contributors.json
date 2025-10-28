@@ -449,5 +449,20 @@
       "community": null
     },
     "repos": ["Website"]
+  },
+  {
+  "slug": "Kapish9741",
+  "name": "Kapish rohilla",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/84222013?v=4",
+  "links": {
+  "github": "https://github.com/kapish9741",
+  "x": "https://x.com/KapishRohilla",
+  "linkedin": "https://www.linkedin.com/in/kapishrohilla/",
+  "community": null
+  },
+  "repos": ["Website"]
   }
 ]
