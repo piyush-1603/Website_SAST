@@ -42,6 +42,35 @@ body.pin-navbar .navbar-header.hidden {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* Projects page: increase transparency when viewing past projects */
+body.projects-page.projects-past .navbar-content {
+  background: rgba(17, 25, 40, 0.35);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Projects page: generally make navbar more transparent and subdued */
+body.projects-page .navbar-content {
+  background: rgba(17, 25, 40, 0.2);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* Dim the links a bit on projects to reduce visual weight under dropdowns */
+body.projects-page .nav-link,
+body.projects-page .dropdown-toggle,
+body.projects-page .contact-button {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.projects-page .nav-link.active {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.projects-page .dropdown-menu {
+  background: rgba(17, 25, 40, 0.75);
+}
+
 /* Logo */
 .navbar-logo {
   flex-shrink: 0;
