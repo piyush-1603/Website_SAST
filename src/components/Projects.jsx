@@ -9,7 +9,7 @@ import Monocopter_png from "../Landing_media/monocopter.webp";
 import Cubesat1_png from "../Landing_media/Cubesastr.jpeg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Footer from "./Footer";
+import Footer from "./footer";
 
 const Projects = () => {
   const [filterType, setFilterType] = useState("all");
