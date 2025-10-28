@@ -12,19 +12,16 @@ const Projects = () => {
   const [filterType, setFilterType] = useState("all");
 
   const projects = [
-    { id: 1, title: "TARS AI", date: "2025-02-13", type: "current", imgSrc: Tars_png },
-    { id: 2, title: "MOON CRAWLER", date: "2025-02-13", type: "current1", imgSrc: MoonC_png },
-    { id: 3, title: "SAT.V2", date: "2025-02-13", type: "current", imgSrc: Cubesat2_png },
-    { id: 4, title: "VECTOR MONOCOPTER THRUSTER", date: "2026-02-13", type: "upcoming", imgSrc: Monocopter_png },
+    { id: 1, title: "TARS AI", date: "2025-02-13", type: "ongoing", imgSrc: Tars_png },
+    { id: 2, title: "MOON CRAWLER", date: "2025-02-13", type: "ongoing", imgSrc: MoonC_png },
+    { id: 3, title: "SAT.V2", date: "2025-02-13", type: "ongoing", imgSrc: Cubesat2_png },
+    { id: 4, title: "VECTOR MONOCOPTER THRUSTER", date: "2026-02-13", type: "future", imgSrc: Monocopter_png },
     { id: 5, title: "SAT.V1", date: "2024-11-12", type: "past", imgSrc: Cubesat1_png }
   ];
 
   const getFilteredProjects = () => {
     if (filterType === "all") return projects;
-    if (filterType === "past") return projects.filter(project => project.type === "past");
-    if (filterType === "ongoing") return projects.filter(project => project.type === "current1");
-    if (filterType === "future") return projects.filter(project => project.type === "upcoming") ;
-    return [];
+    return projects.filter(project => project.type === filterType);
   };
 
   const filtered = getFilteredProjects();
@@ -79,8 +76,8 @@ const Projects = () => {
                 <h6 className="text-base sm:text-2xl uppercase text-gray-300 tracking-wider">
                   {project.type === "past"
                     ? "Past Project"
-                    : project.type === "upcoming"
-                    ? "Upcoming Project"
+                    : project.type === "future"
+                    ? "Future Project"
                     : "Current Project"}
                 </h6>
                 <h1 className="text-2xl sm:text-6xl font-bold text-white">
