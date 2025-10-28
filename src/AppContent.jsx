@@ -25,7 +25,7 @@ import ContributorProfile from "./pages/ContributorProfile.jsx";
 import Contributors from "./pages/Contributors.jsx";
 import DocsHub from "./pages/DocsHub.jsx";
 import SettingsMenu from "./components/SettingsMenu.jsx";
-
+import ChatBot from "./components/ChatBot.jsx";
 import { Ion } from "cesium";
 import useSettings from "./hooks/UseSettings.jsx";
 Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_TOKEN;
@@ -47,7 +47,7 @@ const AppContent = () => {
       <DiamondCursor isActive={isPointerEnabled} />
       <ScrollToTop />
       <SettingsMenu />
-
+      <ChatBot />
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
 
       <main className="">
