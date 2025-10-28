@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import videoe1 from "../Landing_media/satellitevid.mp4";
 import waterpng from "../Landing_media/waterrocket.png";
 import watervid from "../Landing_media/bharatmpvid.mp4";
@@ -17,51 +17,24 @@ import comet_vid from "../Landing_media/Comentvid.mp4";
 import launch_png from "../Landing_media/offlaunch.jpeg";
 import launch_vid from "../Landing_media/launchvid.mp4";
 import useLenis from "../utils/lenis";
+import Footer from "./footer";
 
 const Events = () => {
   const [filterType, setFilterType] = useState("all");
+  const timelineRef = useRef(null);
+  
+  // Use framer-motion's useScroll for smooth timeline animation
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 80%", "end 20%"]
+  });
+
+  // Transform scroll progress to height percentage
+  const heightProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  
   useLenis();
 
-  useEffect(() => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    const handleHover = (event, action) => {
-      const video = event.currentTarget.querySelector("video");
-      if (!video) return;
-
-      if (isMobile) {
-        video.paused ? video.play() : video.pause();
-        video.classList.toggle("opacity-60");
-      } else {
-        if (action === "play") video.play();
-        else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      }
-    };
-
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-      if (isMobile) {
-        card.addEventListener("click", (e) => handleHover(e, "toggle"));
-      } else {
-        card.addEventListener("mouseenter", (e) => handleHover(e, "play"));
-        card.addEventListener("mouseleave", (e) => handleHover(e, "pause"));
-      }
-    });
-
-    return () => {
-      cards.forEach((card) => {
-        if (isMobile) {
-          card.removeEventListener("click", (e) => handleHover(e, "toggle"));
-        } else {
-          card.removeEventListener("mouseenter", (e) => handleHover(e, "play"));
-          card.removeEventListener("mouseleave", (e) => handleHover(e, "pause"));
-        }
-      });
-    };
-  }, [filterType]);
+  useLenis();
 
   const filterEvents = (type) => setFilterType(type);
 
@@ -282,7 +255,7 @@ const Events = () => {
         "tags": ["Competition", "Hackathon", "Team Event"]
       }
     ]
-  }
+  };
 
 
   const timelineData = calendarEventsData.events
@@ -295,35 +268,77 @@ const Events = () => {
       status,
     }));
 
+  useEffect(() => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    const handleHover = (event, action) => {
+      const video = event.currentTarget.querySelector("video");
+      if (!video) return;
+
+      if (isMobile) {
+        video.paused ? video.play() : video.pause();
+        video.classList.toggle("opacity-60");
+      } else {
+        if (action === "play") video.play();
+        else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    };
+
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      if (isMobile) {
+        card.addEventListener("click", (e) => handleHover(e, "toggle"));
+      } else {
+        card.addEventListener("mouseenter", (e) => handleHover(e, "play"));
+        card.addEventListener("mouseleave", (e) => handleHover(e, "pause"));
+      }
+    });
+
+    return () => {
+      cards.forEach((card) => {
+        if (isMobile) {
+          card.removeEventListener("click", (e) => handleHover(e, "toggle"));
+        } else {
+          card.removeEventListener("mouseenter", (e) => handleHover(e, "play"));
+          card.removeEventListener("mouseleave", (e) => handleHover(e, "pause"));
+        }
+      });
+    };
+  }, [filterType]);
+
   return (
-        <div className="pt-44 md:pt-56 px-0">
+    <>
+      {/* Video Background - Fixed */}
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source src={videoe1} type="video/mp4" />
         </video>
       </div>
 
-      <div className="relative z-10 bg-black/80 min-h-screen pb-40">
-        <section className="eventssec flex flex-col items-center mt-28 px-2">
+      {/* Main Content - Not constrained by video */}
+      <div className="relative w-full min-h-screen pt-44 md:pt-56 pb-40">
+        <section className="w-full flex flex-col items-center mt-28">
 
           {/* 🌌 Filter Navbar */}
-          <div className="flex items-center justify-center w-full mt-8 relative " >
-            <div className="flex items-center justify-between gap-4 mb-8 absolute left-40">
+          <div className="flex flex-col md:flex-row items-center justify-center w-full mt-8 px-4 gap-4 md:gap-0 md:relative">
+            <div className="md:absolute md:left-8 lg:left-40 w-full md:w-auto">
               <Link
                 to="/calendar"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 text-sm text-white/90 backdrop-blur hover:bg-white/10 transition-colors duration-200"
-                style={{ padding: "0.5rem 1rem" }}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 text-sm text-white/90 backdrop-blur hover:bg-white/10 transition-colors duration-200 px-4 py-2 w-full md:w-auto"
               >
                 <span>Calendar</span>
               </Link>
             </div>
 
-            <div className="relative flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-md px-3 py-2 sm:px-4 sm:py-3 overflow-x-auto no-scrollbar w-full max-w-[90vw] sm:w-[600px]">
+            <div className="relative flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-md px-3 py-2 sm:px-4 sm:py-3 overflow-x-auto no-scrollbar w-full max-w-[95vw] sm:max-w-md md:max-w-lg">
               {filterTypes.map((type) => (
                 <button
                   key={type}
                   onClick={() => filterEvents(type)}
-                  className={`relative text-sm sm:text-base px-4 py-1.5 rounded-full transition-all duration-300 whitespace-nowrap font-medium ${
+                  className={`relative text-xs sm:text-sm md:text-base px-3 sm:px-4 py-1.5 rounded-full transition-all duration-300 whitespace-nowrap font-medium ${
                     filterType === type
                       ? "text-blue-400 font-semibold"
                       : "text-gray-300 hover:text-white"
@@ -375,10 +390,11 @@ const Events = () => {
                   <img
                     src={event.imgSrc}
                     alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    className="rounded-sm lg:rounded-xl md:rounded-md w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <video
-                    className="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-60 transition-opacity duration-500"
+                    className="rounded-sm lg:rounded-xl md:rounded-md absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-60 transition-opacity duration-500"
                     loop
                     muted
                   >
@@ -398,26 +414,101 @@ const Events = () => {
       </div>
 
       {/* Timeline Section */}
-      <section className="timeline_sast">
+      <section ref={timelineRef} className="timeline_sast relative w-full">
         <div className="timeline-container">
           <h2 className="timeline-title">
             SAST Events Timeline
           </h2>
           
           <div className="timeline-wrapper">
-            {/* Timeline line */}
-            <div className="timeline-line-desktop"></div>
+            {/* Animated Timeline line - Desktop */}
+            <div className="timeline-line-desktop relative">
+              <motion.div
+                className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 via-sky-400 to-blue-500 shadow-[0_0_20px_rgba(56,189,248,0.6),0_0_40px_rgba(59,130,246,0.4)]"
+                style={{
+                  height: heightProgress,
+                  transformOrigin: "top",
+                  filter: "blur(0.5px)"
+                }}
+              />
+              {/* Glow effect at the end of the line */}
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-sky-400"
+                style={{
+                  top: heightProgress,
+                  boxShadow: "0 0 20px 8px rgba(56, 189, 248, 0.8), 0 0 40px 12px rgba(59, 130, 246, 0.75)",
+                }}
+              />
+            </div>
             
-            {/* Mobile timeline line */}
-            <div className="timeline-line-mobile"></div>
+            {/* Animated Mobile timeline line */}
+            <div className="timeline-line-mobile relative">
+              <motion.div
+                className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 via-sky-400 to-blue-500 shadow-[0_0_15px_rgba(56,189,248,0.7),0_0_30px_rgba(59,130,246,0.6)]"
+                style={{
+                  height: heightProgress,
+                  transformOrigin: "top",
+                  filter: "blur(0.2px)"
+                }}
+              />
+              {/* Glow effect at the end of the line */}
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-sky-300"
+                style={{
+                  top: heightProgress,
+                  boxShadow: "0 0 15px 6px rgba(56, 189, 248, 0.8), 0 0 30px 10px rgba(59, 130, 246, 0.8)",
+                }}
+              />
+            </div>
 
-            {timelineData.map((event, index) => (
-              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}>
-                {/* Timeline dot */}
-                <div className={`timeline-dot ${event.status === 'upcoming' ? 'pulse' : ''}`}></div>
+            {timelineData.map((event, index) => {
+              // Calculate when each item should appear based on scroll progress
+              const itemOffset = index / (timelineData.length - 1);
+              const itemProgress = useTransform(
+                scrollYProgress,
+                [Math.max(0, itemOffset - 0.15), Math.min(1, itemOffset + 0.05)],
+                [0, 1]
+              );
+              
+              return (
+                <motion.div
+                  key={index}
+                  style={{
+                    opacity: itemProgress,
+                  }}
+                  className={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}
+                >
+                {/* Timeline dot with scale animation */}
+                <motion.div
+                  style={{
+                    scale: itemProgress,
+                  }}
+                  className={`timeline-dot ${event.status === 'upcoming' ? 'pulse' : ''}`}
+                >
+                  {event.status === 'upcoming' && (
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="absolute inset-0 rounded-full bg-blue-400"
+                    />
+                  )}
+                </motion.div>
 
                 {/* Content card */}
-                <div className={`timeline-content ${index % 2 === 0 ? 'reverse' : 'normal'}`}>
+                <motion.div
+                  style={{
+                    opacity: itemProgress,
+                    x: index % 2 === 0 ? useTransform(itemProgress, [0, 1], [50, 0]) : useTransform(itemProgress, [0, 1], [-50, 0])
+                  }}
+                  className={`timeline-content ${index % 2 === 0 ? 'reverse' : 'normal'}`}
+                >
                   <div className="timeline-card">
                     <div className={`timeline-card-inner ${index % 2 === 0 ? 'reverse' : ''}`}>
                       <span className={`timeline-badge ${event.status === 'completed' ? 'completed' : 'upcoming'}`}>
@@ -428,152 +519,18 @@ const Events = () => {
                       <p className="timeline-event-description">{event.description}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Spacer for desktop */}
                 <div className="timeline-spacer"></div>
-              </div>
-            ))}
+              </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
-    </div>
-    // <div className="events-page-container">
-    //   <div className="events-video-background">
-    //     <video autoPlay loop muted playsInline>
-    //       <source src={videoe1} type="video/mp4" />
-    //     </video>
-    //   </div>
-
-    //   <div className="events-content-wrapper">
-    //     <section className="eventssec events-section-wrapper">
-
-    //       {/* 🌌 Filter Navbar */}
-    //       <div className="events-filter-container">
-    //         {/* Calendar Link - Mobile: Above, Desktop: Left */}
-    //         <div className="events-calendar-link-wrapper">
-    //           <Link to="/calendar" className="events-calendar-link">
-    //             <span>Calendar</span>
-    //           </Link>
-    //         </div>
-
-    //         {/* Filter Buttons */}
-    //         <div className="events-filter-buttons">
-    //           <div className="events-filter-buttons-inner">
-    //             {filterTypes.map((type) => (
-    //               <button
-    //                 key={type}
-    //                 onClick={() => filterEvents(type)}
-    //                 className={`events-filter-btn ${filterType === type ? 'active' : ''}`}
-    //               >
-    //                 {type === "all" && "All"}
-    //                 {type === "past" && "Past"}
-    //                 {type === "ongoing" && "Ongoing"}
-    //                 {type === "future" && "Future"}
-    //               </button>
-    //             ))}
-    //           </div>
-
-    //           {/* Animated underline */}
-    //           <motion.div
-    //             className="events-filter-underline"
-    //             layoutId="underline"
-    //             initial={false}
-    //             animate={{
-    //               left:
-    //                 filterType === "all"
-    //                   ? "8%"
-    //                   : filterType === "past"
-    //                   ? "30%"
-    //                   : filterType === "ongoing"
-    //                   ? "52%"
-    //                   : "75%",
-    //               width:
-    //                 filterType === "all"
-    //                   ? "50px"
-    //                   : filterType === "past"
-    //                   ? "50px"
-    //                   : filterType === "ongoing"
-    //                   ? "75px"
-    //                   : "65px",
-    //             }}
-    //             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-    //           />
-    //         </div>
-    //       </div>
-
-    //       {/* Events Grid */}
-    //       <div className="events-grid">
-    //         {getFilteredEvents().map((event) => (
-    //           <div key={event.id} className="card event-card">
-    //             <div className="event-card-inner">
-    //               <img
-    //                 src={event.imgSrc}
-    //                 alt={event.title}
-    //                 className="event-card-image"
-    //               />
-    //               <video 
-    //                 className="event-card-video"
-    //                 loop 
-    //                 muted 
-    //                 playsInline
-    //               >
-    //                 <source src={event.videoSrc} type="video/mp4" />
-    //               </video>
-    //               <div className="event-card-info">
-    //                 <h2 className="event-card-title">{event.title}</h2>
-    //                 <p className="event-card-description">
-    //                   {event.description}
-    //                 </p>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </section>
-    //   </div>
-
-    //   {/* Timeline Section */}
-    //   <section className="timeline_sast">
-    //     <div className="timeline-container">
-    //       <h2 className="timeline-title">
-    //         SAST Events Timeline
-    //       </h2>
-          
-    //       <div className="timeline-wrapper">
-    //         {/* Timeline line */}
-    //         <div className="timeline-line-desktop"></div>
-            
-    //         {/* Mobile timeline line */}
-    //         <div className="timeline-line-mobile"></div>
-
-    //         {timelineData.map((event, index) => (
-    //           <div key={index} className={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}>
-    //             {/* Timeline dot */}
-    //             <div className={`timeline-dot ${event.status === 'upcoming' ? 'pulse' : ''}`}></div>
-
-    //             {/* Content card */}
-    //             <div className={`timeline-content ${index % 2 === 0 ? 'reverse' : 'normal'}`}>
-    //               <div className="timeline-card">
-    //                 <div className={`timeline-card-inner ${index % 2 === 0 ? 'reverse' : ''}`}>
-    //                   <span className={`timeline-badge ${event.status === 'completed' ? 'completed' : 'upcoming'}`}>
-    //                     {event.category} • {event.status === 'completed' ? 'Completed' : 'Upcoming'}
-    //                   </span>
-    //                   <h3 className="timeline-event-title">{event.title}</h3>
-    //                   <p className="timeline-event-date">{event.date}</p>
-    //                   <p className="timeline-event-description">{event.description}</p>
-    //                 </div>
-    //               </div>
-    //             </div>
-
-    //             {/* Spacer for desktop */}
-    //             <div className="timeline-spacer"></div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </section>
-    // </div>
+      <Footer />
+    </>
   );
 };
 
