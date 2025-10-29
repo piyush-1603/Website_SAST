@@ -449,5 +449,20 @@
       "community": null
     },
     "repos": ["Website"]
+  },
+  {
+    "slug": "aaryan-yadav",
+    "name": "Aaryan Yadav",
+    "role": "Contributor",
+    "location": "Ambala, Haryana",
+    "bio": "General-Secretary of GDG-RU | Passionate full stack developer with expertise in React and Node.js. Always eager to contribute to open source projects and learn new technologies.",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/183892159?s=400&u=a82ed9ac7f043942ac6f7ae3963bc7cdddef0a01&v=4",
+    "links": {
+      "github": "https://github.com/69Igris",
+      "x": "https://x.com/yaaryan181",
+      "linkedin": "https://www.linkedin.com/in/aaryan-yadav-272b8a315/",
+      "community": "https://www.linkedin.com/company/society-for-aerospace-and-space-technology/?viewAsMember=true"
+    },
+    "repos": ["Website"]
   }
 ]
