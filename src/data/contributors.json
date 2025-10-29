@@ -539,5 +539,20 @@
   "community": null
   },
   "repos": ["Website"]
+  },
+    {
+  "slug": "Aniket-bit7",
+  "name": "Aniket Pathak",
+  "role": "Contributor",
+  "location": "India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/188983898?v=4",
+  "links": {
+  "github": "https://github.com/Aniket-bit7",
+  "x": "https://x.com/AniketPathak_",
+  "linkedin": "https://www.linkedin.com/in/aniket-pathak-13822b311/",
+  "community": null
+  },
+  "repos": ["Website"]
   }
 ]
