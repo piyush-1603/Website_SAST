@@ -32,6 +32,22 @@
     "repos": ["Website", "Nebula"]
   },
   {
+    "slug": "krishna-dubale",
+    "name": "Krishna Dubale",
+    "role": "Contributor",
+    "location": "Pune, Maharashtra, India",
+    "bio": "Open Source Cotributor",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/185831101?v=4",
+    "links": {
+      "github": "https://github.com/KrishnaDubale",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/krishna-dubale-9bb186320/?originalSubdomain=in",
+      "community": "https://www.linkedin.com/company/society-for-aerospace-and-space-technology/?viewAsMember=true"
+    },
+    "repos": ["Website"]
+  },
+  {
     "slug": "shaik-junaid-sami",
     "name": "Shaik Junaid Sami",
     "role": "Contributor",
