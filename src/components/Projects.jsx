@@ -309,7 +309,7 @@ const Projects = () => {
         {filtered.map((project, idx) => (
           <div
             key={project.id}
-            className="relative w-full h-screen sticky top-0 project-section overflow-hidden"
+            className="relative w-full h-screen top-0 project-section overflow-hidden"
             style={{ zIndex: filtered.length - idx }}
           >
             {/* Background Image with Gradient Mask */}

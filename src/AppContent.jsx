@@ -28,6 +28,7 @@ import SettingsMenu from "./components/SettingsMenu.jsx";
 
 import { Ion } from "cesium";
 import useSettings from "./hooks/UseSettings.jsx";
+import Loader from "./components/Loader.jsx";
 Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_TOKEN;
 
 const AppContent = () => {
@@ -45,6 +46,7 @@ const AppContent = () => {
       {settings[0].enabled && <NotifierSat />}
       {isPointerEnabled && <CursorEffects isActive={isPointerEnabled} />}
       <DiamondCursor isActive={isPointerEnabled} />
+      <Loader/>
       <ScrollToTop />
       <SettingsMenu />
 
