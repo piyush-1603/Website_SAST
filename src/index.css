@@ -51,7 +51,7 @@ body.cursor-hidden {
 .main-nav a:hover {
   color: var(--color-text);
 }
-.main-nav a.active{
+.main-nav a.active {
   color: var(--color-text);
   font-weight: 600;
 }
@@ -123,7 +123,6 @@ body.cursor-hidden {
   color: var(--color-text);
   font-weight: 600;
 }
-
 
 .contact-button {
   padding: 0.75rem 1.5rem;
@@ -237,7 +236,7 @@ body {
 
 .container {
   max-width: max-content;
-  
+
   margin: 0 0;
   padding: 0.5rem 2rem;
   width: 100%;
@@ -548,7 +547,7 @@ a {
   .stats-wrapper {
     padding: 0 1rem;
   }
-  
+
   .stats-title {
     max-width: 250px;
   }
@@ -1941,7 +1940,8 @@ a {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -2098,20 +2098,18 @@ a {
   } /* mobile */
 }
 
-
 /* Unique styling for Nebula navbar button */
 .nebula-link a {
   /* color: var(--color-text-secondary);   */
-  color: #ff6f61;     
+  color: #ff6f61;
   padding: 6px 14px;
   border-radius: 6px;
   transition: all 0.3s;
   text-decoration: none;
-  
 }
 
 .nebula-link a:hover {
-  color: var(--color-text); 
+  color: var(--color-text);
   transform: translateY(-1px);
 }
 
@@ -2132,7 +2130,11 @@ a {
 /* Header Section */
 .docs-header {
   position: relative;
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), rgba(59, 130, 246, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.08),
+    rgba(59, 130, 246, 0.05)
+  );
   border: 1px solid rgba(96, 165, 250, 0.2);
   border-radius: 1.25rem;
   padding: 2.5rem;
@@ -2142,13 +2144,17 @@ a {
 }
 
 .docs-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.15), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(96, 165, 250, 0.15),
+    transparent 70%
+  );
   border-radius: 50%;
   filter: blur(40px);
   pointer-events: none;
@@ -2230,6 +2236,16 @@ a {
   padding: 1.5rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  -webkit-mask-image: radial-gradient(
+    circle 9999px at 50% 50%,
+    #fff 100%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 9999px at 50% 50%,
+    #fff 100%,
+    transparent 100%
+  );
 }
 
 .docs-sidebar::-webkit-scrollbar {
@@ -2612,7 +2628,7 @@ a {
   border-radius: 0.375rem;
   padding: 0.125rem 0.375rem;
   font-size: 0.875em;
-  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-family: "Monaco", "Menlo", "Courier New", monospace;
   color: #93c5fd;
 }
 
@@ -2691,7 +2707,12 @@ a {
 .markdown-body hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.3),
+    transparent
+  );
   margin: 2rem 0;
 }
 
