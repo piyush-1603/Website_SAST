@@ -6,7 +6,7 @@ const Loader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 4500); 
+    }, 3000); // total visible time reduced to ~3s
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,35 +24,35 @@ const Loader = () => {
           align-items: center;
           justify-content: center;
           position: fixed;
-          transition: opacity 1s ease-in-out;
+          transition: opacity 0.6s ease-in-out;
           z-index: 1001;
           opacity: 1;
         }
 
         .loader.fade-out {
-          animation: fadeOut 1s ease-in-out 4s forwards;
+          animation: fadeOut 0.6s ease-in-out 2.4s forwards;
         }
 
         .loader h1 {
           z-index: 10000;
           font-size: 8vw;
-          color: rgb(255, 255, 255);
+          color: white;
           position: absolute;
           opacity: 0;
           animation-name: lulu;
           animation-timing-function: linear;
-          animation-duration: 1s;
-          animation-delay: 1s;
+          animation-duration: 0.6s;
+          animation-delay: 0.4s;
           animation-fill-mode: forwards;
         }
 
         .loader h1:nth-child(2) {
-          animation-delay: 2s;
+          animation-delay: 1s;
         }
 
         .loader h1:nth-child(3) {
-          animation-duration: 1.2s;
-          animation-delay: 3s;
+          animation-duration: 0.7s;
+          animation-delay: 1.6s;
         }
 
         @keyframes lulu {
