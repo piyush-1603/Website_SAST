@@ -16,11 +16,6 @@ const ChatBot = () => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Check if current path is in showon array
-  if (!showon.includes(location.pathname)) {
-    return null;
-  }
-
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -66,6 +61,10 @@ const ChatBot = () => {
       return () => document.removeEventListener("keydown", handleEscape);
     }
   }, [isOpen]);
+
+  if (!showon.includes(location.pathname)) {
+    return null;
+  }
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
