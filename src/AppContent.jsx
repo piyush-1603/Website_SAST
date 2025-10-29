@@ -46,7 +46,7 @@ const AppContent = () => {
       {settings[0].enabled && <NotifierSat />}
       {isPointerEnabled && <CursorEffects isActive={isPointerEnabled} />}
       <DiamondCursor isActive={isPointerEnabled} />
-      <Loader/>
+      {/* <Loader/> */}
       <ScrollToTop />
       <SettingsMenu />
 
