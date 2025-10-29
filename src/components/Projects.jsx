@@ -9,9 +9,11 @@ import Monocopter_png from "../Landing_media/monocopter.webp";
 import Cubesat1_png from "../Landing_media/Cubesastr.jpeg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useLenis from '../utils/lenis';
 import Footer from "./footer";
 
 const Projects = () => {
+  useLenis();
   const [filterType, setFilterType] = useState("all");
   const [atEnd, setAtEnd] = useState(false);
   const [rebuilding, setRebuilding] = useState(false);
