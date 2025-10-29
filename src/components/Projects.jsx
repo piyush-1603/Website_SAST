@@ -9,7 +9,6 @@ import Monocopter_png from "../Landing_media/monocopter.webp";
 import Cubesat1_png from "../Landing_media/Cubesastr.jpeg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Footer from "./footer";
 
 const Projects = () => {
   const [filterType, setFilterType] = useState("all");
@@ -359,13 +358,8 @@ const Projects = () => {
         ))}
       </section>
 
-      {/* Spacer to ensure footer is visible */}
+      {/* Spacer at bottom to ensure global footer isn't overlapped */}
       <div className="relative z-40 h-20 bg-transparent"></div>
-
-      {/* Footer with proper positioning */}
-      <div className="relative z-50 bg-black">
-        <Footer />
-      </div>
 
       {/* Down Arrow Indicator */}
       <button
