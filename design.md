@@ -67,7 +67,7 @@ The Docs page centralizes all operational knowledge of SAST. It acts as the pers
 
 ### Explore Section Breakdown
 
-Each subsection is designed as a full page experience instead of partial previews to enforce clarity and proper focus.
+Each sub-section is designed as a full page experience instead of partial previews to enforce clarity and proper focus.
 
 Events — designed as a grid for temporal scanning with filtering by status
 Projects — designed in a vertical panoramic layout to encourage deep reading
