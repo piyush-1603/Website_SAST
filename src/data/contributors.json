@@ -633,6 +633,22 @@
     "repos": ["Website"]
   },
   {
+
+  "slug": "krishiv-saini",
+  "name": "Krishiv Saini",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/178106838?v=4",
+  "links": {
+  "github": "https://github.com/krishivsaini",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/krishivsaini1506/",
+  "community": null
+  },
+  "repos": ["Website"]
+},
+{
     "slug": "bineet-keshari",
     "name": "Bineet Keshari",
     "role": "Contributor",
@@ -647,5 +663,6 @@
       "community": null
     },
     "repos": ["Website"]
+
   }
 ]
