@@ -149,6 +149,21 @@
     "repos": ["Website"]
   },
   {
+    "slug": "kush",
+    "name": "Kushagra Maheshwari",
+    "role": "Contributor",
+    "location": "India",
+    "bio": "Full-stack developer and AI enthusiast focused on building meaningful digital products with real-world impact. Passionate about clean engineering, thoughtful design, and scalable technology that solves problems at scale. Driven by curiosity and a strong entrepreneurial mindset, constantly exploring AI, product thinking, and modern development workflows while sharpening leadership, creativity, and strategic execution.",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/72971244?s=400&u=c0ce84ba42bc705945b3d4b1e97c8ae2018cff96&v=4",
+    "links": {
+    "github": "https://github.com/kush11-m",
+    "x": null,
+    "linkedin": "https://www.linkedin.com/in/kushm11/",
+    "community": null
+    },
+    "repos": ["Website"]
+    },
+  {
     "slug": "nakul-jaglan",
     "name": "Nakul Jaglan",
     "role": "Contributor",
@@ -632,4 +647,36 @@
   },
   "repos": ["Website"]
  }
+
+  "slug": "krishiv-saini",
+  "name": "Krishiv Saini",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/178106838?v=4",
+  "links": {
+  "github": "https://github.com/krishivsaini",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/krishivsaini1506/",
+  "community": null
+  },
+  "repos": ["Website"]
+},
+{
+    "slug": "bineet-keshari",
+    "name": "Bineet Keshari",
+    "role": "Contributor",
+    "location": "Varanasi, India",
+    "bio": "I'm Bineet Keshari, a backend-focused full-stack developer passionate about building scalable and meaningful software systems. I'm currently pursuing a B.Tech in Information Technology at KIIT, graduating in 2026, and have gained hands-on experience through impactful internships and national-level hackathons. My core skills include Node.js, Express.js, React, Spring Boot, PostgreSQL, MongoDB, Redis, with deployment experience using Docker, GitHub Actions, Nginx, and AWS EC2.",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/190685125?v=4",
+    "links": {
+      "github": "https://github.com/BineetKeshari2005",
+      "x": null,
+      "linkedin": " https://www.linkedin.com/in/bineet-keshari-799819323/",
+      "community": null
+    },
+    "repos": ["Website"]
+
+  }
 ]
