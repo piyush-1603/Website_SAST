@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 import Landing from "./components/Landing.jsx";
-// import Footer from "./components/footer";
 import Navbar from "./components/Navbar.jsx";
 import Newsletter from "./components/Newsletter.jsx";
 import Events from "./components/Events.jsx";
@@ -67,6 +66,7 @@ const AppContent = () => {
           <Route path="/news" element={<AstronomyNews />} />
           <Route path="/track" element={<SatelliteTracker />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/footer" element={<Footer />} />
           <Route path="/community/members" element={<Members />} />
           <Route path="/community/members/:slug" element={<MemberProfile />} />
           <Route path="/contributors" element={<Contributors />} />
@@ -75,7 +75,6 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <Footer />
     </>
   );
 };
