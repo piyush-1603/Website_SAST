@@ -616,5 +616,20 @@
       "community": null
     },
     "repos": ["Website"]
-  }
+  },
+  {
+  "slug": "mohit-22",
+  "name": "Mohit",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/183510328?v=4",
+  "links": {
+  "github": "",
+  "x": null,
+  "linkedin": "",
+  "community": null
+  },
+  "repos": ["Website"]
+ }
 ]
