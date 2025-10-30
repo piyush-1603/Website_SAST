@@ -584,6 +584,64 @@
       "community": null
     },
     "repos": ["Website"]
+  "slug": "Kapish9741",
+  "name": "Kapish rohilla",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/84222013?v=4",
+  "links": {
+  "github": "https://github.com/kapish9741",
+  "x": "https://x.com/KapishRohilla",
+  "linkedin": "https://www.linkedin.com/in/kapishrohilla/",
+  "community": null
+  },
+  "repos": ["Website"]
+  },
+    {
+  "slug": "Aniket-bit7",
+  "name": "Aniket Pathak",
+  "role": "Contributor",
+  "location": "India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/188983898?v=4",
+  "links": {
+  "github": "https://github.com/Aniket-bit7",
+  "x": "https://x.com/AniketPathak_",
+  "linkedin": "https://www.linkedin.com/in/aniket-pathak-13822b311/",
+  "community": null
+  },
+  "repos": ["Website"]
+  },
+  {
+  "slug": "yash-dhankhar",
+  "name": "Yash Dhankhar",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "CS & AI Engineering student | Frontend Developer | Passionate about building clean, intuitive web apps with React and JavaScript.",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/152961907?v=4",
+  "links": {
+    "github": "https://github.com/OnlineBunker",
+    "x": "https://x.com/yash_d_dhankhar",
+    "linkedin": "https://www.linkedin.com/in/yash-d-dhankhar/",
+    "community": null
+  },
+  "repos": ["Website"]
+},
+    {
+  "slug": "sneha-bayan",
+  "name": "Sneha Bayan",
+  "role": "Contributor",
+  "location": "Assam, India",
+  "bio": "Aspiring Software Developer | Tech Enthusiast @ Newton School of Technology | Passionate About Coding, Creativity & Continuous Learning",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/229448425?v=4",
+  "links": {
+  "github": "https://github.com/sneha-bayan",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/sneha-bayan-27a255381/",
+  "community": null
+  },
+  "repos": ["Website"]
   },
   {
     "slug": "dikshant-jangra",
@@ -597,6 +655,22 @@
       "github": "https://github.com/dikshantjangra/",
       "x": "https://x.com/dikshantstack",
       "linkedin": "https://www.linkedin.com/in/dikshantjangra/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+  {
+    "slug": "debashis-pani",
+    "name": "Debashis Pani",
+    "role": "Contributor",
+    "location": "Bhubaneswar, India",
+    "bio": "I'm Debashis Pani, a backend-focused full-stack developer passionate about building scalable and meaningful software systems. I'm currently pursuing a B.Tech in Information Technology at KIIT, graduating in 2026, and have gained hands-on experience through impactful internships and national-level hackathons. My core skills include Node.js, Express.js, React, Spring Boot, PostgreSQL, MongoDB, Redis, with deployment experience using Docker, GitHub Actions, Nginx, and AWS EC2.",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/154724111",
+    "links": {
+      "github": "https://github.com/pani2004",
+      "x": "https://x.com/DebashisPani3",
+      "linkedin": " https://www.linkedin.com/in/debashis-pani-b28b702b3",
       "community": null
     },
     "repos": ["Website"]

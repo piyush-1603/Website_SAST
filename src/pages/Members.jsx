@@ -30,17 +30,25 @@ function StatusPill({ label, active, onClick }) {
       onClick={onClick}
       aria-pressed={active}
       className={`inline-flex items-center gap-2 rounded-xl text-sm backdrop-blur transition ${
-        active
-          ? "border border-emerald-400/45 bg-emerald-500/15 text-emerald-200 hover:bg-emerald-500/20"
-          : "border border-white/15 bg-white/5 text-white/90 hover:bg-white/10 hover:border-white/25"
+        label === "Inactive"
+          ? active
+            ? "border border-red-400/45 bg-red-500/15 text-red-200 hover:bg-red-500/20"
+            : "border border-white/15 bg-white/5 text-white/90 hover:bg-red-400/15 hover:border-red-400/25"
+          : active
+            ? "border border-emerald-400/45 bg-emerald-500/15 text-emerald-200 hover:bg-emerald-500/20"
+            : "border border-white/15 bg-white/5 text-white/90 hover:bg-white/10 hover:border-white/25"
       }`}
       style={{ padding: "0.5rem 1rem" }}
     >
       <span
         className={`h-2 w-2 rounded-full ${
-          active
-            ? "bg-emerald-400 shadow-[0_0_0_3px_rgba(16,185,129,.15)]"
-            : "bg-zinc-500"
+          label === "Inactive"
+            ? active
+              ? "bg-red-400 shadow-[0_0_0_3px_rgba(239,68,68,.15)]"
+              : "bg-zinc-500"
+            : active
+              ? "bg-emerald-400 shadow-[0_0_0_3px_rgba(16,185,129,.15)]"
+              : "bg-zinc-500"
         }`}
       />
       <span className="capitalize">{label}</span>
