@@ -554,5 +554,20 @@
   "community": null
   },
   "repos": ["Website"]
-  }
+  },
+  {
+  "slug": "yash-dhankhar",
+  "name": "Yash Dhankhar",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "CS & AI Engineering student | Frontend Developer | Passionate about building clean, intuitive web apps with React and JavaScript.",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/152961907?v=4",
+  "links": {
+    "github": "https://github.com/OnlineBunker",
+    "x": "https://x.com/yash_d_dhankhar",
+    "linkedin": "https://www.linkedin.com/in/yash-d-dhankhar/",
+    "community": null
+  },
+  "repos": ["Website"]
+}
 ]
