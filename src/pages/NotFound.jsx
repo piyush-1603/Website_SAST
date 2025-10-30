@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState,useEffect} from 'react';
+import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Home, Search, Rocket, Satellite, Stars } from 'lucide-react';
 
-const NotFound = () => {
+export default function NotFound() {
   const navigate = useNavigate();
   const [stars, setStars] = useState([]);
 
   // Generate random stars for background
   useEffect(() => {
     const generateStars = () => {
-      return Array.from({ length: 100 }, () => ({
+      return Array.from({ length: 150 }, () => ({
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
         size: Math.random() * 3,
@@ -20,17 +20,14 @@ const NotFound = () => {
     setStars(generateStars());
   }, []);
 
-  const quickLinks = [
-    { name: 'Home', path: '/', icon: Home },
-    { name: 'Events', path: '/events', icon: Rocket },
-    { name: 'Track Satellites', path: '/track', icon: Satellite },
-    { name: 'Astronomy News', path: '/news', icon: Stars },
-  ];
+  const handleGoBack = () => {
+    navigate('/');
+  };
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-black via-gray-900 to-purple-950 relative overflow-hidden">
+    <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center px-4 sm:px-6 md:px-8">
       {/* Animated stars background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         {stars.map((star, index) => (
           <div
             key={index}
@@ -46,105 +43,48 @@ const NotFound = () => {
           />
         ))}
       </div>
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
-        {/* Floating astronaut/satellite animation */}
-        <div className="mb-8 animate-bounce">
-          <div className="relative">
-            <Satellite className="w-32 h-32 text-purple-400 animate-spin-slow" />
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full animate-ping" />
+      
+      {/* Main Content */}
+      <div className="text-center max-w-5xl mx-auto relative z-10">
+        {/* 404 with Globe */}
+        <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+          <div className="text-[4rem] xs:text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none text-neutral-100">
+            4
           </div>
-        </div>
-
-        {/* 404 Text */}
-        <div className="text-center mb-8">
-          <h1 className="text-9xl md:text-[12rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-500 to-blue-500 animate-pulse">
-            404
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Lost in Space
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-2">
-            Houston, we have a problem!
-          </p>
-          <p className="text-lg text-gray-400 max-w-md mx-auto">
-            The page you're looking for has drifted into a black hole. 
-            Let's get you back on track.
-          </p>
-        </div>
-
-        {/* Quick links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 w-full max-w-4xl">
-          {quickLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <button
-                key={link.path}
-                onClick={() => navigate(link.path)}
-                className="group flex flex-col items-center justify-center p-6 bg-gray-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl hover:border-purple-400 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
-              >
-                <Icon className="w-8 h-8 mb-2 text-purple-400 group-hover:text-purple-300 transition-colors" />
-                <span className="text-white font-medium">{link.name}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Main action buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-purple-500/50 hover:scale-105"
-          >
-            <Home className="w-5 h-5" />
-            Return to Home
-          </button>
           
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:scale-105"
-          >
-            Go Back
-          </button>
-        </div>
-
-        {/* Fun fact */}
-        <div className="mt-12 p-6 bg-gray-800/30 backdrop-blur-sm border border-purple-500/20 rounded-xl max-w-2xl">
-          <div className="flex items-start gap-3">
-            <Search className="w-6 h-6 text-purple-400 shrink-0 mt-1" />
-            <div>
-              <h3 className="text-purple-300 font-semibold mb-2">Did you know?</h3>
-              <p className="text-gray-300 text-sm">
-                There are over 8,000 satellites orbiting Earth, but only about 2,000 are still functional. 
-                The rest are space debris floating through the cosmos, much like this lost page!
-              </p>
-            </div>
+          {/* Globe Image */}
+          <div className="relative flex-shrink-0">
+            <img 
+              src="https://img.freepik.com/free-photo/beautiful-glowing-gray-full-moon_181624-59870.jpg?t=st%3D1761801711~exp%3D1761805311~hmac%3D49a04bbffe10cb1d0b06ddbe2632ec96891b430fd54759ca5ad7243498767ccc&w=2000"
+              alt="Earth from space"
+              className="w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover"
+            />
+            {/* Glow Effect */}
+            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl -z-10"></div>
+          </div>
+          
+          <div className="text-[4rem] xs:text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold text-neutral-100 leading-none">
+            4
           </div>
         </div>
 
-        {/* Error code for developers */}
-        <div className="mt-8 text-gray-500 text-sm font-mono">
-          ERROR_CODE: PAGE_NOT_FOUND | STATUS: 404
-        </div>
-      </div>
+        {/* Text Content */}
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-5 md:mb-6 px-4">
+          Oops! Lost in Space
+        </h1>
+        <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto px-4 leading-relaxed">
+          We couldn't find the page you're looking for. It might have been moved or deleted.
+        </p>
 
-      {/* CSS for slow spin animation */}
-      <style>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-      `}</style>
+        {/* Go Back Button */}
+        <button
+          onClick={handleGoBack}
+          className="inline-flex items-center gap-3 px-8 py-4 bg-gray-200 hover:bg-white text-black text-lg font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
+        >
+          <ArrowLeft size={20} className="sm:w-6 sm:h-6" />
+          <span>Go Home</span>
+        </button>
+      </div>
     </div>
   );
-};
-
-export default NotFound;
+}
