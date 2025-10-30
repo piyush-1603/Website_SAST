@@ -26,7 +26,8 @@ import ContributorProfile from "./pages/ContributorProfile.jsx";
 import Contributors from "./pages/Contributors.jsx";
 import DocsHub from "./pages/DocsHub.jsx";
 import SettingsMenu from "./components/SettingsMenu.jsx";
-
+import ChatBot from "./components/ChatBot.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import { Ion } from "cesium";
 import useSettings from "./hooks/UseSettings.jsx";
 import Loader from "./components/Loader.jsx";
@@ -50,7 +51,7 @@ const AppContent = () => {
       <Loader/>
       <ScrollToTop />
       <SettingsMenu />
-
+      <ChatBot />
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
 
       <main className="">
@@ -71,6 +72,7 @@ const AppContent = () => {
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/contributors/:slug" element={<ContributorProfile />} />
           <Route path="/docs/*" element={<DocsHub />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

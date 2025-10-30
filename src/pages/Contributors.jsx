@@ -225,8 +225,8 @@ export default function Contributors() {
               style={{ gap: "2.5rem" }}
             >
               {data
-                .slice() // make a copy so original data isn't mutated
-                .sort((a, b) => a.name.localeCompare(b.name)) // ascending order by name
+                .slice() 
+                .sort((a, b) => a.name.localeCompare(b.name)) 
                 .map((c) => (
                   <ContributorCard key={c.slug} c={c} />
                 ))}
