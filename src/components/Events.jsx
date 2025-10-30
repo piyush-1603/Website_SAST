@@ -16,6 +16,7 @@ import comet_vid from "../Landing_media/Comentvid.mp4";
 import launch_png from "../Landing_media/offlaunch.jpeg";
 import launch_vid from "../Landing_media/launchvid.mp4";
 import useLenis from "../utils/lenis";
+import Footer from "./footer";
 
 const Events = () => {
   const [filterType, setFilterType] = useState("all");
@@ -563,6 +564,7 @@ const Events = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
