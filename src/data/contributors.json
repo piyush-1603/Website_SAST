@@ -149,6 +149,21 @@
     "repos": ["Website"]
   },
   {
+    "slug": "kush",
+    "name": "Kushagra Maheshwari",
+    "role": "Contributor",
+    "location": "India",
+    "bio": "Full-stack developer and AI enthusiast focused on building meaningful digital products with real-world impact. Passionate about clean engineering, thoughtful design, and scalable technology that solves problems at scale. Driven by curiosity and a strong entrepreneurial mindset, constantly exploring AI, product thinking, and modern development workflows while sharpening leadership, creativity, and strategic execution.",
+    "avatarUrl": "https://avatars.githubusercontent.com",
+    "links": {
+    "github": "https://github.com/kush11-m",
+    "x": null,
+    "linkedin": "https://www.linkedin.com/in/kushm11/",
+    "community": null
+    },
+    "repos": ["Website"]
+    },
+  {
     "slug": "nakul-jaglan",
     "name": "Nakul Jaglan",
     "role": "Contributor",
