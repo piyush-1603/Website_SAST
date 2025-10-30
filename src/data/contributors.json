@@ -423,7 +423,7 @@
   },
   {
     "slug": "dhairya-goel",
-    "name": "Dhairy Goel",
+    "name": "Dhairya Goel",
     "role": "Member",
     "location": "Delhi, India",
     "bio": "Open Source Contributor",
@@ -583,66 +583,6 @@
       "linkedin": "https://www.linkedin.com/in/sneha-bayan-27a255381/",
       "community": null
     }
-  },
-  {
-    "slug": "Kapish9741",
-    "name": "Kapish rohilla",
-    "role": "Contributor",
-    "location": "Delhi, India",
-    "bio": "Full Stack Developer",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/84222013?v=4",
-    "links": {
-      "github": "https://github.com/kapish9741",
-      "x": "https://x.com/KapishRohilla",
-      "linkedin": "https://www.linkedin.com/in/kapishrohilla/",
-      "community": null
-    },
-    "repos": ["Website"]
-  },
-  {
-    "slug": "Aniket-bit7",
-    "name": "Aniket Pathak",
-    "role": "Contributor",
-    "location": "India",
-    "bio": "Full Stack Developer",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/188983898?v=4",
-    "links": {
-      "github": "https://github.com/Aniket-bit7",
-      "x": "https://x.com/AniketPathak_",
-      "linkedin": "https://www.linkedin.com/in/aniket-pathak-13822b311/",
-      "community": null
-    },
-    "repos": ["Website"]
-  },
-  {
-    "slug": "yash-dhankhar",
-    "name": "Yash Dhankhar",
-    "role": "Contributor",
-    "location": "Delhi, India",
-    "bio": "CS & AI Engineering student | Frontend Developer | Passionate about building clean, intuitive web apps with React and JavaScript.",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/152961907?v=4",
-    "links": {
-      "github": "https://github.com/OnlineBunker",
-      "x": "https://x.com/yash_d_dhankhar",
-      "linkedin": "https://www.linkedin.com/in/yash-d-dhankhar/",
-      "community": null
-    },
-    "repos": ["Website"]
-  },
-  {
-    "slug": "sneha-bayan",
-    "name": "Sneha Bayan",
-    "role": "Contributor",
-    "location": "Assam, India",
-    "bio": "Aspiring Software Developer | Tech Enthusiast @ Newton School of Technology | Passionate About Coding, Creativity & Continuous Learning",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/229448425?v=4",
-    "links": {
-      "github": "https://github.com/sneha-bayan",
-      "x": null,
-      "linkedin": "https://www.linkedin.com/in/sneha-bayan-27a255381/",
-      "community": null
-    },
-    "repos": ["Website"]
   },
 
   {
