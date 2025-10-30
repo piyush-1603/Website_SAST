@@ -59,7 +59,7 @@ function Footer() {
           
           {/* Logo & Social Section */}
           <div className="lg:col-span-2 flex flex-col justify-between space-y-10">
-            <div className="space-y-8">
+            <div className="space-y-8 pb-2">
               {/* Logo with SAST text */}
               <div className="flex flex-col gap-4 group cursor-pointer">
                 {/* Logo with glow effect */}
