@@ -664,5 +664,20 @@
     },
     "repos": ["Website"]
 
-  }
+  },
+  {
+  "slug": "Trishit-Swarnakar",
+  "name": "Trishit Swarnakar",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/170200412?v=4",
+  "links": {
+  "github": "https://github.com/Trishix",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/trishit-swarnakar/",
+  "community": null
+  },
+  "repos": ["Website"]
+}
 ]
