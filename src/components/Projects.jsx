@@ -361,8 +361,13 @@ const Projects = () => {
         ))}
       </section>
 
-      {/* Spacer at bottom to ensure global footer isn't overlapped */}
+      {/* Spacer to ensure footer is visible */}
       <div className="relative z-40 h-20 bg-transparent"></div>
+      
+      {/* Footer with proper positioning */}
+      <div className="relative z-50 bg-black">
+        <Footer />
+      </div>
 
       {/* Down Arrow Indicator */}
       <button
