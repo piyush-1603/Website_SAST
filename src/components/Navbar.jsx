@@ -128,10 +128,14 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="https://nebula.sastclub.tech/" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-colors duration-200">
+            <a
+              href="https://nebula.sastclub.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 text-sm font-medium hover:text-white hover:bg-[#A23B52]/20 rounded-full transition-colors duration-200 !text-[#A23B52]"
+            >
               Nebula
             </a>
-
             <NavLink to={registerItem.path} className={({ isActive }) => cn("px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200", isActive ? "text-blue-400 bg-white/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
               {registerItem.name}
             </NavLink>
