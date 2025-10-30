@@ -569,8 +569,8 @@
     "community": null
   },
   "repos": ["Website"]
-}
-   , {
+},
+    {
   "slug": "sneha-bayan",
   "name": "Sneha Bayan",
   "role": "Contributor",
