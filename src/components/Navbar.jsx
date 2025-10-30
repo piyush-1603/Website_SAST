@@ -99,8 +99,8 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-2 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl overflow-hidden">
+              <div className="absolute left-0 top-[2.7rem] w-26 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-black/80 backdrop-blur-xl border-x border-b border-white/20 rounded-b-xl shadow-xl overflow-hidden">
                   {exploreItems.map((item) => (
                     <NavLink key={item.path} to={item.path} className={({ isActive }) => cn("block px-4 py-2.5 text-sm transition-colors duration-200", isActive ? "text-blue-400 bg-white/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
                       {item.name}
@@ -117,8 +117,8 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-2 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl overflow-hidden">
+              <div className="absolute left-0 top-[2.7rem] w-30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-black/80 backdrop-blur-xl border-x border-b border-white/20 rounded-b-xl shadow-xl overflow-hidden">
                   {communityItems.map((item) => (
                     <NavLink key={item.path} to={item.path} className={({ isActive }) => cn("block px-4 py-2.5 text-sm transition-colors duration-200", isActive ? "text-blue-400 bg-white/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
                       {item.name}
@@ -128,10 +128,14 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="https://nebula.sastclub.tech/" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-colors duration-200">
+            <a
+              href="https://nebula.sastclub.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 text-sm font-medium hover:text-white hover:bg-[#A23B52]/20 rounded-full transition-colors duration-200 !text-[#A23B52]"
+            >
               Nebula
             </a>
-
             <NavLink to={registerItem.path} className={({ isActive }) => cn("px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200", isActive ? "text-blue-400 bg-white/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
               {registerItem.name}
             </NavLink>
