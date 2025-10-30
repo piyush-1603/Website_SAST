@@ -664,5 +664,20 @@
     },
     "repos": ["Website"]
 
-  }
+  },
+  {
+  "slug": "arnav-terex",
+  "name": "Arnav Ahirwar",
+  "role": "Contributor",
+  "location": "Indore, Madhya Pradesh",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/183591086?v=4",
+  "links": {
+  "github": "https://github.com/arnav-terex",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/arnav-ahirwar-03470a295/",
+  "community": null
+  },
+  "repos": ["Website"]
+}
 ]
