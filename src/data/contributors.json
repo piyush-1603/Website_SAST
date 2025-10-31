@@ -680,4 +680,19 @@
   },
   "repos": ["Website"]
 }
+    "slug": "himani-agarwal",
+    "name": "Himani Agarwal",
+    "role": "Member",
+    "location": "Teenpani Haldwani Nainital Uttarakhand",
+    "bio": "Open Source Contributor",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/190685125?v=4",
+    "links": {
+      "github": "https://github.com/himaniag10",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/himaniag10",
+      "community": null
+    },
+    "repos": ["Website"]
+  }
 ]
