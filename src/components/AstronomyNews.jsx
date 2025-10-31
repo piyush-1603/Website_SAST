@@ -114,6 +114,22 @@ export default function AstronomyNews() {
     }
   };
 
+  function getRandomAstronomyImage() {
+    const images = [
+      "https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg",
+      "https://apod.nasa.gov/apod/image/1901/IC405_Abolfath_3952.jpg",
+      "https://images-assets.nasa.gov/image/PIA04921/PIA04921~orig.jpg",
+      "https://apod.nasa.gov/apod/image/1807/NGC6744-HaLRGBpugh1024.jpg",
+      "https://images-assets.nasa.gov/image/PIA03606/PIA03606~orig.jpg",
+      "https://apod.nasa.gov/apod/image/1701/OrionNebula_Hubble_960.jpg",
+      "https://apod.nasa.gov/apod/image/1902/MilkyWayPanorama_Merzlyakov_2000.jpg",
+      "https://apod.nasa.gov/apod/image/1709/LagoonTrifid_Vargas_1824.jpg",
+    ];
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  }
+
   return (
     <div className="pt-20 md:pt-15 px-0">
       <div className="astronomy-news-container">
