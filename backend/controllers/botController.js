@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { genRes } = require("../utils/botService");
 
 const returnResponse = async (req, res) => {

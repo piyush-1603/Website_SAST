@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { GoogleGenAI } = require("@google/genai");
 
 const systemPrompt = `
