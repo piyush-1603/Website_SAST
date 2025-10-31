@@ -48,4 +48,4 @@ To get access, make sure to:
 ---
 // Adding a commit
 
-Let’s build something extraordinary together
+Let’s craft something unforgettable, together.
