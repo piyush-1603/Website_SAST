@@ -2,7 +2,7 @@
 
 Welcome to the Society for Astrophysics and Space Technology (SAST)! We are a community-driven organization dedicated to exploring the mysteries of the cosmos and advancing space technology through collaboration, education, and innovation.
 
-## Our Mission
+## Our Missions
 
 At SAST, we believe that space exploration and astrophysics should be accessible to everyone. Our mission is to:
 
