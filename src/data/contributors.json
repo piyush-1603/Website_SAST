@@ -680,5 +680,21 @@
       "community": null
     },
     "repos": ["Website"]
+  },
+  {
+    "slug": "yug-johri",
+    "name": "Yug Johri",
+    "role": "Contributor",
+    "location": "Bhopal, Madhya Pradesh, India.",
+    "bio": "Open Source Contributor",
+    "status": "active",
+    "avatarUrl": "https://github.com/account",
+    "links": {
+      "github": "https://github.com/Mystic-commits",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/yugjohri/",
+      "community": null
+    },
+    "repos": ["Website"]
   }
 ]
