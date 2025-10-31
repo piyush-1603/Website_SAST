@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require("express");
 const returnResponse = require("../controllers/botController");
 const botRouter = express.Router();
