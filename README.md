@@ -1,7 +1,7 @@
 # SAST Club Website
 
 Welcome to the official repository of the **Society for Astrophysics and Space Technology (SAST)** website.  
-Our aim is to collaboratively create and maintain a functional, visually appealing platform that showcases our club’s spirit, accomplishments, and activities.
+Our goal is to collaboratively build and maintain a beautiful, functional platform that reflects the spirit, achievements, and events of our club.
 
 ---
 
