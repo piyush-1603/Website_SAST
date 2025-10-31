@@ -418,7 +418,7 @@ const Events = () => {
                   
                   {/* Date Badge */}
                   <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
-                    <div className="bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl shadow-lg">
+                    <div className="relative bg-white/20 backdrop-blur-lg text-white font-medium px-5 py-2.5 rounded-xl border border-white/40 shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:bg-white/30 hover:border-white/60 hover:shadow-[0_4px_30px_rgba(255,255,255,0.25)] transition-all duration-300 ease-out">
                       <p className="text-xs sm:text-sm font-semibold">
                         {new Date(event.startDate).toLocaleDateString('en-US', { 
                           month: 'short', 

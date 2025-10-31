@@ -633,7 +633,21 @@
     "repos": ["Website"]
   },
   {
-
+  "slug": "mohit-22",
+  "name": "Mohit",
+  "role": "Contributor",
+  "location": "Delhi, India",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/183510328?v=4",
+  "links": {
+  "github": "",
+  "x": null,
+  "linkedin": "",
+  "community": null
+  },
+  "repos": ["Website"]
+ },
+ {
   "slug": "krishiv-saini",
   "name": "Krishiv Saini",
   "role": "Contributor",
@@ -676,6 +690,16 @@
   "github": "https://github.com/Trishix",
   "x": null,
   "linkedin": "https://www.linkedin.com/in/trishit-swarnakar/",
+  "slug": "arnav-terex",
+  "name": "Arnav Ahirwar",
+  "role": "Contributor",
+  "location": "Indore, Madhya Pradesh",
+  "bio": "Full Stack Developer",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/183591086?v=4",
+  "links": {
+  "github": "https://github.com/arnav-terex",
+  "x": null,
+  "linkedin": "https://www.linkedin.com/in/arnav-ahirwar-03470a295/",
   "community": null
   },
   "repos": ["Website"]
@@ -692,6 +716,38 @@
       "github": "https://github.com/himaniag10",
       "x": null,
       "linkedin": "https://www.linkedin.com/in/himaniag10",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+  {
+    "slug": "yug-johri",
+    "name": "Yug Johri",
+    "role": "Contributor",
+    "location": "Bhopal, Madhya Pradesh, India.",
+    "bio": "Open Source Contributor",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/187501028?v=4",
+    "links": {
+      "github": "https://github.com/Mystic-commits",
+      "x": "https://x.com/yugjohri520",
+      "linkedin": "https://www.linkedin.com/in/yugjohri/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+  {
+    "slug": "dhanvin-vadlamudi",
+    "name": "Dhanvin Vadlamudi",
+    "role": "Contributor",
+    "location": "Hyderabad, Telangana",
+    "bio": "Open Source Contributor",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/186273034?v=4",
+    "links": {
+      "github": "https://github.com/Dhanvin1520",
+      "x": null,
+      "linkedin": "https://www.linkedin.com/in/dhanvin-vadlamudi-365614318/",
       "community": null
     },
     "repos": ["Website"]
