@@ -102,7 +102,7 @@ export default function AstronomyNews() {
   };
 
   return (
-    <div className="pt-25 md:pt-10 px-0">
+    <div className="pt-20 md:pt-15 px-0">
       <div className="astronomy-news-container">
         <header className="astronomy-header">
           <h1 className="astronomy-title">Astronomy News</h1>
