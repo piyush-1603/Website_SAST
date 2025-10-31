@@ -28,6 +28,7 @@ You may summarize or explain scientific concepts, but do not make assumptions or
 
 `;
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
 exports.genRes = async (msg, history) => {
   const chat = await ai.chats.create({
     model: "gemini-2.5-flash",
