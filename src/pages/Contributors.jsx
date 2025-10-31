@@ -149,7 +149,7 @@ export default function Contributors() {
   return (
     <React.Fragment>
       <section
-        className="w-full pt-44 md:pt-56 px-0"
+        className="w-full pt-20 md:pt-30 px-0"
         style={{ paddingBottom: "7rem" }}
       >
         <div
