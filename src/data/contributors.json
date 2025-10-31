@@ -688,11 +688,27 @@
     "location": "Bhopal, Madhya Pradesh, India.",
     "bio": "Open Source Contributor",
     "status": "active",
-    "avatarUrl": "https://github.com/account",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/187501028?v=4",
     "links": {
       "github": "https://github.com/Mystic-commits",
       "x": "https://x.com/yugjohri520",
       "linkedin": "https://www.linkedin.com/in/yugjohri/",
+      "community": null
+    },
+    "repos": ["Website"]
+  },
+  {
+    "slug": "dhanvin-vadlamudi",
+    "name": "Dhanvin Vadlamudi",
+    "role": "Contributor",
+    "location": "Hyderabad, Telangana",
+    "bio": "Open Source Contributor",
+    "status": "active",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/186273034?v=4",
+    "links": {
+      "github": "https://github.com/Dhanvin1520",
+      "x": "https://",
+      "linkedin": "https://www.linkedin.com/in/dhanvin-vadlamudi-365614318/",
       "community": null
     },
     "repos": ["Website"]
