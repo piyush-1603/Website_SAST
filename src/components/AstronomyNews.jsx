@@ -7,13 +7,21 @@ import { fetchAstronomyNews } from "../utils/astronomy-news";
 
 const PAGE_SIZE = 9;
 
+const spaceImages = [
+  "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80",
+];
+
 export default function AstronomyNews() {
   const seenIds = useRef(new Set());
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const queryClient = useQueryClient();
 
-  // Helper to fetch a page by pageParam (offset)
   const fetchPage = async ({ pageParam = 0 }) => {
     const res = await fetchAstronomyNews({
       limit: PAGE_SIZE,
@@ -45,9 +53,20 @@ export default function AstronomyNews() {
     initialPageParam: 0,
   });
 
-  // Flatten pages into a single array
   const pages = data?.pages || [];
   const flattened = useMemo(() => pages.flatMap((p) => p.articles), [pages]);
+
+  // 🌌 Assign a consistent random fallback per article
+  const fallbackImages = useMemo(() => {
+    const map = new Map();
+    flattened.forEach((item) => {
+      map.set(
+        item.id,
+        spaceImages[Math.floor(Math.random() * spaceImages.length)]
+      );
+    });
+    return map;
+  }, [flattened]);
 
   useEffect(() => {
     if (!data) return;
@@ -64,17 +83,11 @@ export default function AstronomyNews() {
     }
   }, [data, flattened]);
 
-  // Infinite scroll handler
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-
-      // Show scroll-to-top button when user has scrolled down at least 500px
-      // This is much more sensitive for testing
       setShowScrollToTop(scrollPosition > 500);
-
-      // Infinite scroll logic
       if (windowHeight + scrollPosition >= document.body.offsetHeight - 300) {
         if (hasNextPage && !isFetchingNextPage) {
           fetchNextPage();
@@ -118,7 +131,7 @@ export default function AstronomyNews() {
   }
 
   return (
-    <div className="pt-44 md:pt-56 px-0">
+    <div className="pt-20 md:pt-15 px-0">
       <div className="astronomy-news-container">
         <header className="astronomy-header">
           <h1 className="astronomy-title">Astronomy News</h1>
@@ -151,7 +164,6 @@ export default function AstronomyNews() {
           </div>
         )}
 
-        {/* Show loading overlay when refreshing with existing content */}
         {isRefreshing && flattened.length > 0 && (
           <div className="loading-container">
             <div className="spinner"></div>
@@ -163,28 +175,36 @@ export default function AstronomyNews() {
             {flattened.map((item) => (
               <article
                 key={item.id}
-                className="news-card"
+                className="news-card relative overflow-hidden rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 shadow-[0_0_25px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300 cursor-pointer"
                 onClick={() =>
                   window.open(item.url, "_blank", "noopener,noreferrer")
                 }
               >
-                <div className="news-image-container">
+                <div className="news-image-container relative">
                   <img
-                    src={item.image || "/vite.svg"}
+                    src={item.image || fallbackImages.get(item.id)}
                     alt={item.title}
-                    className="news-image"
+                    className="news-image w-full h-56 object-cover rounded-t-2xl opacity-90 transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                     onError={(e) => {
-                      e.target.src = getRandomAstronomyImage();
+                      e.target.src = fallbackImages.get(item.id);
                     }}
                   />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-t-2xl"></div>
                 </div>
 
-                <div className="news-content">
-                  <h2 className="news-title">{item.title}</h2>
-                  <p className="news-summary">{item.summary}</p>
+                <div className="news-content p-4 backdrop-blur-sm bg-white/5 rounded-b-2xl border-t border-white/10">
+                  <h2 className="news-title text-white text-lg font-semibold mb-2">
+                    {item.title}
+                  </h2>
+                  <p className="news-summary text-gray-300 text-sm line-clamp-3">
+                    {item.summary}
+                  </p>
                   {item.source && (
-                    <div className="news-source">{item.source}</div>
+                    <div className="news-source text-blue-400 text-xs mt-2">
+                      {item.source}
+                    </div>
                   )}
                 </div>
               </article>
@@ -206,7 +226,6 @@ export default function AstronomyNews() {
         )}
       </div>
 
-      {/* Scroll to Top Button */}
       <button
         className={`fixed bottom-30 right-10 w-14 h-14 md:w-12 md:h-12 bg-white/10 border border-white/20 rounded-full text-white cursor-pointer flex items-center justify-center z-[1000] backdrop-blur-md shadow-lg transition-all duration-300 ease-out ${
           showScrollToTop

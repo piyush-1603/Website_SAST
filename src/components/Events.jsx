@@ -330,7 +330,7 @@ const Events = () => {
       </div>
 
       {/* Main Content - Not constrained by video */}
-      <div className="relative w-full min-h-screen pt-44 md:pt-56 pb-40">
+      <div className="relative w-full min-h-screen pt-25 md:pt-30 pb-40">
         <section className="w-full flex flex-col items-center mt-28">
 
           {/* 🌌 Filter Navbar */}
@@ -344,7 +344,7 @@ const Events = () => {
               </Link>
             </div>
 
-            <div className="relative flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-md px-3 py-2 sm:px-4 sm:py-3 overflow-x-auto no-scrollbar w-full max-w-[95vw] sm:max-w-md md:max-w-lg">
+            <div className="relative flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-md px-3 py-2 sm:px-4 sm:py-3 w-full max-w-[95vw] sm:max-w-md md:max-w-lg lg:max-w-xl">
               {filterTypes.map((type) => (
                 <button
                   key={type}
@@ -375,7 +375,7 @@ const Events = () => {
                       ? "25%"
                       : filterType === "ongoing"
                       ? "48%"
-                      : "77%",
+                      : "76%",
                   width:
                     filterType === "all"
                       ? "80px"
